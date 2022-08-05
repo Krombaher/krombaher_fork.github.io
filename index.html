@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fork</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <form id="form" class="form">
+    <div class="container">
+      <div class="form__inner">
+        <div class="form__left-block">
+          <div class="form__left-text">Sign up</div>
+        </div>
+        <div class="form__message hide">
+          <div class="form__message-status">
+            <div class="form__title">Thank You!</div>
+            <div class="form__text">you registered!</div>
+          </div>
+          <div class="form__message-text">
+            <span>Have an account?</span><a class="form__login-item">Login</a>
+          </div>
+        </div>
+        <div class="form__right-block show">
+          <div class="form__right-top">
+            <div class="form__title">New user?</div>
+            <div class="form__text">Use the form below to create your account.</div>
+          </div>
+          <div class="form__items">
+            <div class="form__item">
+              <label form="formName" class="form__item-label">First Name</label>
+              <input id="name" type="text" name="name" class="form__item-input _req" value="">
+              <small></small>
+            </div>
+            <div class="form__item">
+              <label form="formLastName" class="form__item-label">Last Name</label>
+              <input id="last-name" type="text" name="lastname" class="form__item-input _req" value="">
+              <small></small>
+            </div>
+            <div class="form__item">
+              <label form="formNationality" class="form__item-label">Nationality</label>
+              <select name="nationality" class="form__item-input input select">
+                <option value="American" selected>American</option>
+                <option value="Belarussian">Belarussian</option>
+                <option value="Russian">Russian</option>
+              </select>
+              <div class="form__arr form__arr--national"></div>
+            </div>
+            <div class="form__item">
+              <label form="formEmail" class="form__item-label">E-mail</label>
+              <input id="email" type="text" name="email" class="form__item-input" value="">
+              <small></small>
+            </div>
+            <div class="form__item">
+              <label for="formDate" class="form__item-label">Date of Birth</label>
+              <div class="form__date-items">
+                <div class="form__date-item">
+                  <select id="day" name="day" class="form__date-input date-day select"></select>
+                  <div class="form__arr form__arr--date"></div>
+                </div>
+                <div class="form__date-item">
+                  <select id="month" name="month" class="form__date-input date-month select"></select>
+                  <div class="form__arr form__arr--date"></div>
+                </div>
+                <div class="form__date-item">
+                  <select id="year" name="year" class="form__date-input date-year select"></select>
+                  <div class="form__arr form__arr--date"></div>
+                </div>
+              </div>
+            </div>
+            <div class="form__item">
+              <label class="form__item-label">Gender</label>
+              <div class="form__gender">
+                <div class="form__gender-options">
+                  <input type="radio" name="gender" id="male" class="_radio">
+                  <label for="male" class="form__label-radio">Male</label>
+                </div>
+                <div class="form__gender-options female">
+                  <input type="radio" name="gender" id="female" class="_radio">
+                  <label for="female" class="form__label-radio">Female</label>
+                </div>
+              </div>
+            </div>
+            <div class="form__item">
+              <label form="formPass" class="form__item-label">Password</label>
+              <input id="password" type="password" name="password" class="form__item-input _req _password">
+              <small></small>
+            </div>
+            <div class="form__item">
+              <label form="formConfirmPass" class="form__item-label">Confirm Password</label>
+              <input id="confirm-password" type="password" name="confirm-password"
+                class="form__item-input _req _password">
+              <small></small>
+            </div>
+          </div>
+          <div class="form__login">
+            <div class="form__login-text">
+              <span>Have an account?</span><a href="#" class="form__login-item">Login</a>
+            </div>
+            <button class="form__btn">Complete Signup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <script src="js.js"></script>
+</body>
