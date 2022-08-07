@@ -130,10 +130,10 @@ document.addEventListener('DOMContentLoaded', function () {
         thanks.innerHTML = `
             <div class="form__title">${errorMessage}</div>
         `
-        document.querySelector('.form__inner').append(thanks);
+        document.querySelector('.form__right-block').append(thanks);
 
         setTimeout(() => {
-            thanks.classList.add('hide');
+            document.querySelector('.form__right-block').removeChild(thanks);
         }, 3000);
     }
 
