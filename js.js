@@ -13,29 +13,34 @@ document.addEventListener('DOMContentLoaded', function () {
     const yearSelect = document.getElementById('year');
     const statusSentMessage = document.querySelector('.form__message');
     const rightFormBlock = document.querySelector('.form__right-block');
+    const errorMessage = {
+        text: 'Form cannot be blank',
+        data: 'Form not submitted...'
+    }
 
     const months = ['January', 'February', 'March',
         'April', 'May', 'June', 'July', 'August', 'September',
         'October', 'November', 'December'];
 
-    form.addEventListener('submit', formSent);
+    form.addEventListener('submit', formSubmit);
 
-    function formSent(e) {
+    function formSubmit(e) {
         e.preventDefault();
 
         let error = formValidate(form);
 
         if (error === 0) {
-            sentForm();
+            formSent();
             openSentMessage();
             addSnakeAnimation();
         } else {
-            alert('Form entered incorrectly...');
+            // alert('Form entered incorrectly...');
+            modal(errorMessage.text);
         }
     }
 
-    // Send Form
-    function sentForm() {
+    // Sent Form
+    function formSent() {
 
         const formData = new FormData(form);
         const object = {};
@@ -56,7 +61,8 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .then(() => form.reset())
             .catch(() => {
-                alert('Form not submitted...');
+                // alert('Form not submitted...');
+                modal(errorMessage.data)
             });
     }
 
@@ -117,7 +123,21 @@ document.addEventListener('DOMContentLoaded', function () {
         return error;
     }
 
-    function addSnakeAnimation () {
+    function modal(errorMessage) {
+        const thanks = document.createElement('div');
+
+        thanks.classList.add('form__message-error')
+        thanks.innerHTML = `
+            <div class="form__title">${errorMessage}</div>
+        `
+        document.querySelector('.form__inner').append(thanks);
+
+        setTimeout(() => {
+            thanks.classList.add('hide');
+        }, 3000);
+    }
+
+    function addSnakeAnimation() {
         const btn = document.querySelector('.form__btn');
 
         btn.classList.add('form__btn-animation');
@@ -156,9 +176,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             rightFormBlock.classList.add('show');
             rightFormBlock.classList.remove('hide');
-        }, 4000);
+        }, 3000);
     }
-    
+
     // Select Date of Birth
 
     (function addMouth() {

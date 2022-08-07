@@ -114,6 +114,7 @@ form {
 
 .form__inner {
   display: flex;
+  position: relative;
 }
 
 .form__left-block {
@@ -153,6 +154,16 @@ form {
   font-family: 'WorkSans';
   padding-top: 216px;
   padding-bottom: 43px;
+}
+
+.form__message-error {
+  background-color: #FFFFFF;
+  font-family: 'WorkSans';
+  padding: 20px;
+  position: absolute;
+  top: 170px;
+  left: 250px;
+  box-shadow: 0 0 2px #e24b4b;
 }
 
 .form__message-status {
@@ -221,8 +232,8 @@ form {
 }
 
 .form__arr--national {
-  left: 224px;
-  bottom: 20px;
+  right: 0;
+  bottom: 13px;
 }
 
 .form__arr {
@@ -231,7 +242,7 @@ form {
   border-top: 1px solid black;
   border-left: 1px solid black;
   transform: rotate(225deg);
-  position: relative;
+  position: absolute;
   pointer-events: none;
 }
 
@@ -259,10 +270,11 @@ form {
 .form__date-item {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .form__arr--date {
-  right: 10px;
+  right: 0;
 }
 
 .date-month {
@@ -347,7 +359,6 @@ form {
 @media (max-width: 700px) {
   .form__left-block {
     display: none;
-
   }
 }
 
@@ -368,6 +379,11 @@ form {
 
 @media (max-width: 520px) {
   .form__item {
+    width: 100%;
+    margin: 0 20px 16px 20px;
+  }
+
+  .form__item-input {
     width: 100%;
   }
 
